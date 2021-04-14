@@ -28,25 +28,24 @@ circles("black", 8, -17, 100)
 circles("black", 8,  17, 100)
 
 
-def mouth(x, y, l, b):
+def mouth(x, y, a, length):
     s.penup()
-    s.fillcolor("black")
+    s.fillcolor("#ff6004")
     s.goto(x, y)
+    s.setheading(a)
     s.pendown()
     s.begin_fill()
-    for _ in range(4):
-        if _ % 2 == 0:
-            s.forward(l)
-            s.left(90)
-        else:
-            s.forward(b)
-            s.left(90)
+    s.forward(length)
+    s.setheading(a-100)
+    s.forward(length+30)
+    s.setheading(a+104)
+    s.forward(length+31)
     s.end_fill()
 
 # mouth
 
 
-mouth(-10, 70, 20, 5)
+mouth(2, 70, 90, 20)
 
 # buttons
 
